@@ -878,7 +878,8 @@ using [`karet`](https://github.com/calmm-js/karet) and assuming that the `value`
 property will be an Atom:
 
 ```jsx
-const TextInput = ({value}) => <input {...U.bind({value})}/>
+const TextInput = ({value}) =>
+  <input type="text" value={value} onChange={U.getProps({value})} />
 ```
 
 If we now create an atom
