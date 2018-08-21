@@ -1075,15 +1075,16 @@ Let's then proceed to make an editable list of names.  Here is one way to do it:
 ```jsx
 const ListOfNames = ({names}) =>
   <ul>
-    {U.mapCached(i => <li key={i}><TextInput value={names.view(i)}/></li>,
-                 U.indices(names))}
+    {U.mapElems((name, i) => <li key={i}><TextInput value={name}/></li>,
+                names)}
   </ul>
 ```
 
-Aside from putting the `TextInput` in place, we changed the way elements are
-identified for `U.mapCached`.  In this case we identity them by their index.
-The function `U.indices` from `karet.util` maps a list `[x0, ..., xN]` to a list
-of indices `[0, ..., N]`.  Those indices are then used as the ids.
+Here, we are using
+[`U.mapElems`](https://github.com/calmm-js/karet.util#U-mapElems) to decompose
+the `names` atom into a list of `TextInput`s by passing a `name` atom to each of
+them. In this case, `mapElems` allows us to identify each name by their index.
+Those indices are then used as the keys.
 
 ## The architecture
 
