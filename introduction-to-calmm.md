@@ -853,10 +853,10 @@ specifies a referentially transparent function, which allows us to use
 `U.mapElems` to cache the results.
 
 Our Kefir and Calmm based [TodoMVC](https://github.com/calmm-js/karet-todomvc)
-also just uses `U.mapCached` and seems to be one of the fastest and one of the
-most concise TodoMVC implementations around.  To test the performance of that
-TodoMVC implementation, you can run the following script in your browser's
-console to populate the storage with 2000 todo items:
+also just uses (now obsolete) `U.mapCached` and seems to be one of the fastest
+and one of the most concise TodoMVC implementations around.  To test the
+performance of that TodoMVC implementation, you can run the following script in
+your browser's console to populate the storage with 2000 todo items:
 
 ```jsx
 var store = []
